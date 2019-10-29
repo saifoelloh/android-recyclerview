@@ -8,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
@@ -30,7 +28,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     @Override
-    public void onBindViewHolder(final FoodViewHolder holder, int position) {
+    public void onBindViewHolder(final FoodViewHolder holder, final int position) {
         holder.tv_name.setText(foods.get(position).getName());
         holder.tv_desctiption.setText(foods.get(position).getDescription());
         holder.tv_price.setText(foods.get(position).getPrice().toString());
@@ -41,10 +39,10 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
                 Bundle bundle = new Bundle();
                 Intent intent = new Intent(context, FoodActivity.class);
 
-                bundle.putString("name", holder.tv_name.getText().toString());
-                bundle.putString("price", holder.tv_price.getText().toString());
-                bundle.putString("description", holder.tv_desctiption.getText().toString());
-                bundle.putInt("photo", holder.iv_photo.getImageAlpha());
+                bundle.putString("name", foods.get(position).getName());
+                bundle.putString("price", foods.get(position).getPrice().toString());
+                bundle.putString("description", foods.get(position).getDescription());
+                bundle.putInt("photo", foods.get(position).getPhoto());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

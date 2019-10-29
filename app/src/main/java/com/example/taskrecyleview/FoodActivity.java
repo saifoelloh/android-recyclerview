@@ -1,8 +1,6 @@
 package com.example.taskrecyleview;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +13,7 @@ public class FoodActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.setTitle("Food Description");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
@@ -26,6 +25,6 @@ public class FoodActivity extends AppCompatActivity {
         tv_name.setText(getIntent().getStringExtra("name"));
         tv_price.setText(getIntent().getStringExtra("price"));
         tv_description.setText(getIntent().getStringExtra("description"));
-        iv_photo.setImageAlpha(getIntent().getIntExtra("photo",0));
+        iv_photo.setImageResource(getIntent().getIntExtra("photo",0));
     }
 }

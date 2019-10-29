@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.setTitle("Home");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -32,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void addData() {
         foods = new ArrayList<>();
         foods.add(new Food("Ayam Geprek", "Ayam geprek enak harga bersahabat", R.drawable.mina_chan, 12500));
-        foods.add(new Food("Bebek Goreng", "Bebek Goreng gurih dengan sambal yang nampol", R.drawable.mina_chan, 24000));
-        foods.add(new Food("Sel Sel", "Cheese tea dengan kualitas dan rasa terbaik", R.drawable.mina_chan, 13000));
+        foods.add(new Food("Bebek Goreng", "Bebek Goreng gurih dengan sambal yang nampol", R.drawable.hello, 24000));
+        foods.add(new Food("Sel Sel", "Cheese tea dengan kualitas dan rasa terbaik", R.drawable.coba, 13000));
         foods.add(new Food("Baskin Robbins", "Es krim asli Amerika dengan rasa yang mempesona", R.drawable.mina_chan, 25000));
     }
 }
